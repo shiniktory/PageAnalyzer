@@ -1,0 +1,59 @@
+﻿OUTPUT FOR EXAMPLES:
+
+1. COMMAND: 
+java -cp PageAnalyzer.jar com/agileengine/analyzer/PageAnalyzer d:/Java/sample-0-origin.html d:/Java/sample-1-evil-gemini.html
+
+CALCULATIONS LOGS:
+▒▒▒ 26, 2018 9:30:13 PM com.agileengine.analyzer.parser.DocumentParser getElementById
+INFO: Found element: <a id="make-everything-ok-button" class="btn btn-success" href="#ok" title="Make-Button" rel="next" onclick="javascript:window.okDone(); return false;"> Make everything OK </a>
+▒▒▒ 26, 2018 9:30:13 PM com.agileengine.analyzer.parser.DocumentParser findSimilarElements
+INFO: Found elements with the same parent and tag: 17
+▒▒▒ 26, 2018 9:30:13 PM com.agileengine.analyzer.comparator.ElementComparator getElement
+INFO: The most similar element <a class="btn btn-success" href="#check-and-ok" title="Make-Button" rel="done" onclick="javascript:window.okDone(); return false;"> Make everything OK </a> with rate 4.230769230769231  of maximum 5.0
+
+RESULT: 
+html > body > div > div > div[3] > div[1] > div > div[2] > a[2]
+
+2. COMMAND: 
+java -cp PageAnalyzer.jar com/agileengine/analyzer/PageAnalyzer d:/Java/sample-0-origin.html d:/Java/sample-2-container-and-clone.html
+
+CALCULATIONS LOGS:
+▒▒▒ 26, 2018 9:31:41 PM com.agileengine.analyzer.parser.DocumentParser getElementById
+INFO: Found element: <a id="make-everything-ok-button" class="btn btn-success" href="#ok" title="Make-Button" rel="next" onclick="javascript:window.okDone(); return false;"> Make everything OK </a>
+▒▒▒ 26, 2018 9:31:41 PM com.agileengine.analyzer.parser.DocumentParser findSimilarElements
+INFO: Found elements with the same parent and tag: 17
+▒▒▒ 26, 2018 9:31:41 PM com.agileengine.analyzer.comparator.ElementComparator getElement
+INFO: The most similar element <a class="btn test-link-ok" href="#ok" title="Make-Button" rel="next" onclick="javascript:window.okComplete(); return false;"> Make everything OK </a> with rate 4.179166666666667 of maximum 5.0
+
+RESULT: 
+html > body > div > div > div[3] > div[1] > div > div[2] > div > a
+
+
+3. COMMAND: 
+java -cp PageAnalyzer.jar com/agileengine/analyzer/PageAnalyzer d:/Java/sample-0-origin.html d:/Java/sample-3-the-escape.html
+
+CALCULATIONS LOGS:
+▒▒▒ 26, 2018 9:22:29 PM com.agileengine.analyzer.parser.DocumentParser getElementById
+INFO: Found element: <a id="make-everything-ok-button" class="btn btn-success" href="#ok" title="Make-Button" rel="next" onclick="javascript:window.okDone(); return false;"> Make everything OK </a>
+▒▒▒ 26, 2018 9:22:29 PM com.agileengine.analyzer.parser.DocumentParser findSimilarElements
+INFO: Found elements with the same parent and tag: 17
+▒▒▒ 26, 2018 9:22:29 PM com.agileengine.analyzer.comparator.ElementComparator getElement
+INFO: The most similar element <a class="btn btn-success" href="#ok" title="Do-Link" rel="next" onclick="javascript:window.okDone(); return false;"> Do anything perfect </a> with rate 3.3014354066985643 of maximum 5.0
+
+RESULT: 
+html > body > div > div > div[3] > div[1] > div > div[3] > a
+
+
+4. COMMAND: 
+java -cp PageAnalyzer.jar com/agileengine/analyzer/PageAnalyzer d:/Java/sample-0-origin.html d:/Java/sample-4-the-mash.html
+
+CALCULATIONS LOGS:
+▒▒▒ 26, 2018 9:32:45 PM com.agileengine.analyzer.parser.DocumentParser getElementById
+INFO: Found element: <a id="make-everything-ok-button" class="btn btn-success" href="#ok" title="Make-Button" rel="next" onclick="javascript:window.okDone(); return false;"> Make everything OK </a>
+▒▒▒ 26, 2018 9:32:45 PM com.agileengine.analyzer.parser.DocumentParser findSimilarElements
+INFO: Found elements with the same parent and tag: 16
+▒▒▒ 26, 2018 9:32:45 PM com.agileengine.analyzer.comparator.ElementComparator getElement
+INFO: The most similar element <a class="btn btn-success" href="#ok" title="Make-Button" rel="next" onclick="javascript:window.okFinalize(); return false;"> Do all GREAT </a> with rate 3.922222222222222 of maximum 5.0
+
+RESULT: 
+html > body > div > div > div[3] > div[1] > div > div[3] > a
